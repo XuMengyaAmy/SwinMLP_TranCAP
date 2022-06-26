@@ -1,5 +1,5 @@
 # SwinMLP-TranCAP: End-to-End Window-Based MLP Transformer Using Patches
-This repository contains the reference code for the paper "Rethinking Surgical Captioning: End-to-End Window-Based MLP Transformer Using Patches (MICCAI2022)"
+This repository contains the reference code for the paper "Rethinking Surgical Captioning: End-to-End Window-Based MLP Transformer Using Patches (MICCAI 2022)"
 
 If you find this repo useful, please cite our paper.
 
