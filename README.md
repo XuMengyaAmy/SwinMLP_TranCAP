@@ -32,8 +32,7 @@ python -m pip install -e .
 ## Data preparation
 - DAISI Dataset
 Because we are not allowed to release the dataset, please require dataset access to the DAISI Dataset Creator.
-[The AI-Medic: an artificial intelligent mentor for trauma surgery](https://www.tandfonline.com/doi/abs/10.1080/21681163.2020.1835548?journalCode=tciv20)
-
+[The AI-Medic: an artificial intelligent mentor for trauma surgery](https://www.tandfonline.com/doi/abs/10.1080/21681163.2020.1835548?journalCode=tciv20).
 It is worth highlighting that we use the cleaned DAISI Dataset from the following work:
 [Surgical Instruction Generation with Transformers](https://arxiv.org/pdf/2107.06964.pdf)
 
