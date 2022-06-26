@@ -1,0 +1,35 @@
+caption_model: newfc
+
+# input_json: data/data_daisi/daisi_afterprepro.json
+# input_fc_dir: data/data_daisi/daisi_resnet18_feat512_fc
+# input_att_dir: data/data_daisi/daisi_resnet18_feat512_att
+# input_label_h5: data/data_daisi/daisi_afterprepro_label.h5
+
+input_json: data/data_miccai18/miccai18_afterprepro.json
+input_label_h5: data/data_miccai18/miccai18_afterprepro_label.h5
+input_att_dir: data/data_miccai18/miccai18_resnet18_feat512_att
+input_fc_dir: data/data_miccai18/miccai18_resnet18_feat512_fc
+
+learning_rate: 0.0005
+
+seq_per_img: 1 # added
+
+learning_rate_decay_start: 0
+scheduled_sampling_start: 0
+# checkpoint_path: $ckpt_path
+# $start_from
+language_eval: 1
+# save_checkpoint_every: 3000
+save_every_epoch: 1
+val_images_use: 447
+
+batch_size: 9
+max_epochs: 100
+
+# added by mengya 
+#================ 512 set ===============#
+fc_feat_size: 512
+att_feat_size: 512
+input_encoding_size: 512
+rnn_size: 2048
+

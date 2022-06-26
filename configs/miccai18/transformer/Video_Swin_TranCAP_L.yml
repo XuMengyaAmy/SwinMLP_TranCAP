@@ -1,0 +1,59 @@
+caption_model: Video_Swin_TranCAP_L
+noamopt: true
+noamopt_warmup: 20000
+label_smoothing: 0.0
+input_json: data/data_miccai18/miccai18_afterprepro.json
+input_label_h5: data/data_miccai18/miccai18_afterprepro_label.h5
+
+# input_att_dir: data/data_miccai18/miccai18_att
+input_img_dir: /home/ren2/data2/mengya/mengya_dataset/instruments18_caption
+
+seq_per_img: 1
+batch_size: 12  #75 #5,50, 128 #128 # 256
+
+sequence_length: 4
+learning_rate: 0.0005 
+
+# batch_size: 9, sequence_length: 3
+# # batch_size: 12, sequence_length: 4
+
+# ==================== #
+patch_norm: true
+ape: false
+patch_size: 4
+dim: 128
+fc_feat_size: 128
+att_feat_size: 128
+# ==================== #
+
+# Notice: because I'm to lazy, I reuse the option name for RNNs to set the hyperparameters for transformer:
+# N=num_layers
+# d_model=input_encoding_size
+# d_ff=rnn_size
+
+# will be ignored
+num_layers: 6
+input_encoding_size: 512
+rnn_size: 2048 # 2048 mengya: change 2048 into 512
+
+# Transformer config (just let you know)
+N_enc: 6
+N_dec: 6
+d_model: 512
+d_ff: 2048 # 2048 mengya: change 2048 into 512
+num_att_heads: 8
+dropout: 0.1
+
+
+learning_rate_decay_start: 0 # at what iteration to start decaying learning rate? (in epoch). decaying learning rate at epoch 0
+scheduled_sampling_start: -1 # at what iteration to start decay gt probability？ (-1 = dont) (in epoch)
+# save_checkpoint_every: 3000 # 'how often to save a model checkpoint (in iterations)?'
+save_every_epoch: 1
+# checkpoint_path: best_checkpoints/daisi
+
+language_eval: 1
+val_images_use: -1 #435 #2175 # 447
+max_epochs: 100 # 100 #30
+train_sample_n: 1 
+
+REFORWARD: false

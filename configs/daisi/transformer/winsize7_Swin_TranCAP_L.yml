@@ -1,0 +1,57 @@
+# ================ 256 set =============== #
+caption_model: Swin_TranCAP_L
+noamopt: true
+noamopt_warmup: 20000
+label_smoothing: 0.0
+input_json: data/data_daisi/daisi_afterprepro.json
+input_label_h5: data/data_daisi/daisi_afterprepro_label.h5
+# input_att_dir: data/data_daisi/daisi_att
+input_img_dir: /home/ren2/data2/mengya/mengya_dataset/cleaned_daisi/images290
+
+seq_per_img: 1
+#####################
+
+batch_size: 9 # 75 #50 #128 #128 # 256                                                 
+learning_rate: 0.0005
+
+# ==================== #
+patch_norm: true
+ape: false
+patch_size: 4
+window_size: 7
+dim: 128
+fc_feat_size: 128
+att_feat_size: 128
+# ==================== #
+# 9, 4
+
+# Notice: because I'm to lazy, I reuse the option name for RNNs to set the hyperparameters for transformer:
+# N=num_layers
+# d_model=input_encoding_size
+# d_ff=rnn_size
+
+num_layers: 6
+input_encoding_size: 512
+rnn_size: 2048 # 2048 mengya: change 2048 into 512
+
+# Transformer config (just let you know)
+N_enc: 6
+N_dec: 6
+d_model: 512
+d_ff: 2048 # 2048 mengya: change 2048 into 512
+num_att_heads: 8
+dropout: 0.1
+
+
+learning_rate_decay_start: 0 # at what iteration to start decaying learning rate? (in epoch). decaying learning rate at epoch 0
+scheduled_sampling_start: -1 # at what iteration to start decay gt probability？ (-1 = dont) (in epoch)
+# save_checkpoint_every: 3000 # 'how often to save a model checkpoint (in iterations)?'
+save_every_epoch: 1
+# checkpoint_path: best_checkpoints/daisi
+
+language_eval: 1
+val_images_use: 1646
+max_epochs: 100
+train_sample_n: 1 ############# 'The reward weight from cider' # Used for self critical or structure. Used when sampling is need during training
+
+REFORWARD: false
