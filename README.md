@@ -4,15 +4,15 @@ This repository contains the reference code for the paper "Rethinking Surgical C
 If you find this repo useful, please cite our paper.
 
 <p align="center">
-  <img src="figures/Figure1_v3.png.png" alt="SwinMLP-TranCAP" width="600"/>
+  <img src="figures/Figure1_v3.png" alt="SwinMLP-TranCAP" width="600"/>
 </p>
 
 <p align="center">
-  <img src="figures/Figure2.png.png" alt="window-based model using patches" width="600"/>
+  <img src="figures/Figure2.png" alt="window-based model using patches" width="600"/>
 </p>
 
 <p align="center">
-  <img src="figures/Figure3.png.png" alt="result" width="600"/>
+  <img src="figures/Figure3.png" alt="result" width="600"/>
 </p>
 
 ## Environment setup
